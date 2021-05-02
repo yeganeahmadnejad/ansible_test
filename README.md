@@ -6,7 +6,7 @@ role nginx : for installing and configuring nginx webserver and deploying the co
 role common : for configuring common requirment of servers.
 role learning : for learning purpose, I wanted to test variable priority and test loops in ansible.
 during learning role I found that variable priority is like : 
-1) group_vars 
+1) 1) group_vars 
 2) 2) vars
 3) 3) default 
 
