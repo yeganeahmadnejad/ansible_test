@@ -1,0 +1,5 @@
+---
+node_apps_location: "/var/app/hello"
+node_port: 81
+
+

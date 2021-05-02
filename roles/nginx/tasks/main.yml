@@ -1,0 +1,6 @@
+---
+- include_tasks: nginx.yml
+- include_tasks: copy_code.yml
+- include_tasks: nodejs.yml
+
+

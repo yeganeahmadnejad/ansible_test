@@ -1,0 +1,4 @@
+---
+nginx_dir: "/etc/nginx"
+nginx_sites_dir: "/etc/nginx/conf.d"
+nginx_port: "80"

@@ -1,0 +1,23 @@
+---
+# This playbook with learning goal deploys the whole application stack.
+- name: learn more about ansible check var priority and test loop
+  hosts: test
+  roles:
+    - learning
+
+- name: apply common configuration to all nodes
+  hosts: all
+  roles:
+    - common
+
+- name: configure and deploy the webservers and application code
+  hosts: webservers
+  roles:
+    - nginx
+
+- name: deploy Postgres and configure the databases
+  hosts: dbservers
+  roles:
+    - postgres
+
+

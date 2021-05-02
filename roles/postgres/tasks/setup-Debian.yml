@@ -1,0 +1,4 @@
+---
+- name: Print not supported message for {{ ansible_os_family }} 
+  ansible.builtin.debug:
+    msg: sorry ! we do not support {{ ansible_os_family }}  distribuation yet

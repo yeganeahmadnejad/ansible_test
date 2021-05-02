@@ -1,0 +1,36 @@
+---
+# This playbook contains common plays that will be run on all nodes.
+
+- name: Install requirment package
+  yum:
+    state: present
+    name:
+     - tmux
+     - wget
+     - yum-utils
+     - net-tools
+     - ntp
+
+- name: Configure ntp file
+  template:
+    src: ntp.conf.j2
+    dest: /etc/ntp.conf
+  tags: ntp
+  notify: restart ntp
+
+- name: Start the ntp service
+  service:
+    name: ntpd
+    state: started
+    enabled: yes
+  tags: ntp
+
+- name: test to see if selinux is running
+  command: getenforce
+  register: sestatus
+  changed_when: false
+  ignore_errors: true
+
+
+
+

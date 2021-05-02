@@ -1,0 +1,12 @@
+---
+postgresql_version: "10"
+postgresql_data_dir: "/var/lib/pgsql/data"
+postgresql_bin_path: "/usr/bin"
+postgresql_config_path: "/var/lib/pgsql/data"
+postgresql_daemon: postgresql
+postgresql_packages:
+  - postgresql
+  - postgresql-server
+  - postgresql-contrib
+postgresql_unix_socket_directories_mode: '0755'
+postgresql_python_library: python3-psycopg2

@@ -1,0 +1,6 @@
+---
+# Variables listed here are applicable to all host groups
+
+ntpserver: server1
+repository: https://github.com/yeganeahmadnejad/sample-node
+test_var: group_vars

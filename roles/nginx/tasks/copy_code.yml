@@ -1,0 +1,19 @@
+---
+# These tasks are responsible for copying the latest dev/production code from
+# the version control system.
+- name: Ensure Node.js app folder exists.
+  file: "path={{ node_apps_location }} state=directory"
+
+- name: create hello directory
+  file:
+    path: "{{item}}"
+    state: directory
+  with_items:
+    - "{{ node_apps_location }}"
+
+- name: Copy the code from repository
+  git:
+    repo: "{{ repository }}"
+    dest: "{{ node_apps_location }}"
+  ignore_errors: true
+

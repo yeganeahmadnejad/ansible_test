@@ -1,0 +1,19 @@
+---
+- name: Install nginx
+  yum: name=nginx state=present
+
+- name: Add repository nginx-release (CentOS6/CentOS7)
+  yum: name="http://nginx.org/packages/centos/{{ansible_distribution_major_version}}/noarch/RPMS/nginx-release-centos-{{ansible_distribution_major_version}}-0.el{{ansible_distribution_major_version}}.ngx.noarch.rpm"
+
+- name: Install nginx
+  yum: name=nginx state=present enablerepo=nginx
+
+- name: setup selinux config
+  shell: setsebool -P httpd_can_network_connect 1
+  ignore_errors: true
+
+- name: Start Nginx
+  service: name=nginx enabled=yes state=started
+
+
+

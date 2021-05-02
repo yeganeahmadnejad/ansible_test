@@ -1,0 +1,9 @@
+
+---
+- name: Print var to check first priority 
+  ansible.builtin.debug:
+    msg: this variable has first priority  {{ test_var }} 
+
+- name: Print var to check second priority 
+  ansible.builtin.debug:
+    msg: this variable has second priority  {{ test_var2 }} 

@@ -1,0 +1,16 @@
+---
+- name: test simple item
+  lineinfile: dest={{ playbook_dir }}/test.txt line={{ item }} state=present
+  with_items:
+    - Line 10
+    - Line 20
+    - Line 30
+
+- name: test dictionary ietm
+  debug: msg="{{ item.my_value }}"
+  with_items:
+    - my_element: first
+      my_value: 1
+    - my_element: second
+      my_value: 2
+
